@@ -234,6 +234,20 @@ void EthernetClass::setRetransmissionCount(uint8_t num)
 	SPI.endTransaction();
 }
 
+void EthernetClass::clean()
+{
+	uint8_t chip, maxindex=MAX_SOCK_NUM;
+
+	chip = W5100.getChip();
+	if (!chip) return EthernetClient(MAX_SOCK_NUM);
+#if MAX_SOCK_NUM > 4
+	if (chip == 51) maxindex = 4; // W5100 chip never supports more than 4 sockets
+#endif
+	// force all sockets to close
+	for (uint8_t i=0; i < maxindex; i++) {
+		socketClose(i);
+	}
+}
 
 
 

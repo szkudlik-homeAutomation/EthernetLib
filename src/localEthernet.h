@@ -105,6 +105,8 @@ public:
 	void setRetransmissionTimeout(uint16_t milliseconds);
 	void setRetransmissionCount(uint8_t num);
 
+	void clean();
+
 	friend class EthernetClient;
 	friend class EthernetServer;
 	friend class EthernetUDP;
