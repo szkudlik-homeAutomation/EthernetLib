@@ -19,7 +19,7 @@
  */
 
 #include <Arduino.h>
-#include "Ethernet.h"
+#include "localEthernet.h"
 #include "utility/w5100.h"
 
 #if ARDUINO >= 156 && !defined(ARDUINO_ARCH_PIC32)
