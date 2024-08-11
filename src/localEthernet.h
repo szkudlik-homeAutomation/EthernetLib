@@ -269,6 +269,7 @@ public:
 
 	// TODO: make private when socket allocation moves to EthernetClass
 	static uint16_t server_port[MAX_SOCK_NUM];
+	uint16_t getPort() { return _port; }
 };
 
 
